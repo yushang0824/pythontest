@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>课程表管理</title>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui@2.15.14/lib/theme-chalk/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://unpkg.com/element-ui@2.15.14/lib/index.js"></script>
+    <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script> -->
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vuex@3.6.2/dist/vuex.min.js"> </script> -->
+    <!-- <script src="./utils.js"></script> -->
+    <!-- <script src="./vue/branch_auth.vue"></script> -->
+    <style>
+        .box-card {
+            width: 100%;
+        }
+
+        .btn {
+            width: 100px;
+        }
+
+        .float-right {
+            float: right;
+            /* padding: 8px; */
+            margin-right: 14px;
+        }
+
+        .is-selected {
+            color: #1989FA;
+        }
+
+        .my-calendar .el-calendar-day {
+            height: 100px;
+        }
+
+        .el-notification {
+            width: 600px;
+        }
+    </style>
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <el-card class="box-card">
+            <div slot="header" class="clearfix">
+                <span>课程表</span>
+                <el-input size="small" v-model="search" placeholder="请输入课程名称" @input="filterCourses"
+                    style="float: right; margin-bottom: 14px; width: 350px;">
+                    <el-button slot="append" icon="el-icon-search"></el-button>
+                </el-input>
+                <el-button size="small" class="float-right" type="primary" >
+                    启动版本
+                </el-button>
+            </div>
+            <el-table :data="schedule" style="width: 100%">
+                <el-table-column prop="time" label="时间" width="180"></el-table-column>
+                <el-table-column prop="monday" label="周一"></el-table-column>
+                <el-table-column prop="tuesday" label="周二"></el-table-column>
+                <el-table-column prop="wednesday" label="周三"></el-table-column>
+                <el-table-column prop="thursday" label="周四"></el-table-column>
+                <el-table-column prop="friday" label="周五"></el-table-column>
+                <el-table-column prop="saturday" label="周六"></el-table-column>
+                <el-table-column prop="saturday" label="周日"></el-table-column>
+            </el-table>
+        </el-card>
+    </div>
+    <script>
+        vue = new Vue({
+            el: '#app',
+            data: {
+                search: '',
+                schedule: [
+                    { time: '上午第一节', monday: '课程1', tuesday: '课程2', wednesday: '课程3', thursday: '课程4', friday: '课程5', saturday: '课程6' },
+                    { time: '上午第二节', monday: '课程7', tuesday: '课程8', wednesday: '课程9', thursday: '课程10', friday: '课程11', saturday: '课程12' },
+                    // 更多课程...
+                ],
+                filteredSchedule: [],
+            },
+            methods: {
+                handleShortCut(command) {
+                    // if (!this.shortCuts[command].obj || this.shortCuts[command].obj.closed) {
+                    //     this.shortCuts[command].obj = window.open(
+                    //         this.shortCuts[command].url, command);
+                    // } else {
+                    //     this.shortCuts[command].obj.focus();
+                    // }
+                },
+                filterCourses() {
+                    this.filteredSchedule = this.schedule.filter((course) =>
+                        Object.values(course).some((value) =>
+                            value.toLowerCase().includes(this.search.toLowerCase())
+                        )
+                    );
+                },
+            },
+
+            created: function () {
+            },
+
+            mounted: function () {
+                // this.showUnclosedCount = Utils.getCookie('showUnclosedCount', 'true') === 'true';
+                // this.handleReresh();
+            },
+        })
+    </script>
+</body>
+
+</html>
