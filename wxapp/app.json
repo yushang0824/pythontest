@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "pages/2048/2048",
+    "pages/sodu/sodu"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "我的小程序",
+    "navigationBarTextStyle": "black"
+  }
+}

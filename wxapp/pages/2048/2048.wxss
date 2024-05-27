@@ -1,0 +1,51 @@
+/* pages/2048/2048.wxss */
+
+.row {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#grid-container {
+  width: 700rpx;
+  height: 700rpx;
+  padding: 10rpx;
+  background-color: #bbada0;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.grid-cell {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 12rpx;
+  background-color: #ccc0b3;
+}
+
+#number-container {
+  width: 700rpx;
+  height: 700rpx;
+  padding: 10rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.number-cell {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 12rpx;
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 80rpx;
+  line-height: 160rpx;
+  text-align: center;
+}

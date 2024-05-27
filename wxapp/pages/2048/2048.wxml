@@ -1,0 +1,18 @@
+<!--pages/2048/2048.wxml-->
+<view class='row'>
+  <button bindtap='init'>New Game</button>
+  <text id="score">score:{{score}}</text>
+
+  <view style='position:relative;' bindtouchstart='touchStart' bindtouchmove='touchMove' bindtouchend='touchEnd'>
+    <view id="grid-container">
+      <view class="grid-cell" wx:for="{{[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}}" wx:for-item="n" wx:key="n">
+      </view>
+    </view>
+    <view id="number-container" style='position:absolute; left:0px; top:0px;'>
+      <view class="number-cell" wx:for="{{[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}}" wx:for-item="i" wx:key="i" style='{{style[(i - i % 4) / 4][i % 4]}}'>
+         {{board[(i - i % 4) / 4][i % 4] > 0 ? board[(i - i % 4) / 4][i % 4] : ''}} 
+      </view>
+    </view>
+  </view>
+
+</view>

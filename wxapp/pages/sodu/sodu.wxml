@@ -1,0 +1,26 @@
+<!--pages/sodu/sodu.wxml-->
+
+
+<view class="row" wx:for="{{[0, 1, 2, 3, 4, 5, 6, 7, 8]}}" wx:for-item="i" wx:key="i">
+  <view class="{{ 'grid ' + (i % 3 == 2 ? 'bottom ' : '') +  (j % 3 == 2 ? 'right ' : '') + (edit ? 'bd-color ' : '') + ((selrow == i && selcol == j) ? 'sel-bg ' : (grid[i][j].err ? 'err-bg': (((i - i % 3) + (j - j % 3) / 3) % 2 == 1 ? 'gray-bg ' : '')))}}" wx:for="{{[0, 1, 2, 3, 4, 5, 6, 7, 8]}}" wx:for-item="j" wx:key="j" bindtap='onGridClick' id="{{i * 10 + j}}">
+     <text class="{{(grid[i][j].fill ? 'text-hard' : 'text-normal') }}" wx:if="{{grid[i][j].v > 0}}">
+      {{grid[i][j].v}} 
+     {{}}
+     </text> 
+     <text class="text-small" wx:else>{{text[i][j]}}</text> 
+  </view>
+</view>
+
+<view class="row space">
+  <button class="btn" wx:for="{{[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:for-item="j" wx:key="j" bindtap='onNumClick' id="{{j}}">
+    {{j}}
+  </button>
+</view>
+
+<view class="row space">
+  <button type='primary' bindtap='onSolvingClick' disabled='{{edit}}'>求解</button>
+  <button bindtap='onBackClick' disabled='{{edit}}' >回退</button>
+  <button type='warn' bindtap='onCleanClick'>清空</button>
+  <button type='primary' bindtap='onEditClick'>{{edit ? '完成' :'编辑'}}</button>
+</view>
+

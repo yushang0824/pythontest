@@ -1,0 +1,84 @@
+/* pages/sodu/sodu.wxss */
+.sodu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* border: 2rpx solid black; */
+}
+.row {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.space {
+  margin-top: 15rpx
+}
+
+.grid {
+  border-width: 3rpx 0 0 3rpx;
+  border-style: solid;
+  border-color: #555;
+  /* border: 2rpx solid black; */
+  /* display: inline;  */
+  width: 77rpx;
+  height: 77rpx;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+
+.bd-color {
+  border-color: #d55;
+}
+
+.bottom {
+  border-bottom-width: 3rpx;
+}
+
+.right {
+  border-right-width: 3rpx;
+}
+
+.sel-bg {
+  background-color:lightblue;
+}
+
+.err-bg {
+  background-color:lightpink;
+}
+
+.gray-bg {
+  background-color: #eee
+}
+
+.text-hard {
+  font-size: 40rpx;
+  color: green;
+}
+
+.text-normal {
+  font-size: 40rpx;
+  color: black;
+}
+
+.text-error {
+  font-size: 40rpx;
+  color: red;
+}
+
+.text-small {
+  font-size: 18rpx;
+  color: black;
+}
+
+.btn {
+  width: 70rpx;
+  height: 70rpx;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  margin: 0 8rpx 0 8rpx
+}
