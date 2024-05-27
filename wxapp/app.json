@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/sodu/sodu",
-    "pages/2048/2048"
+    "pages/2048/2048",
+    "pages/login/login"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -26,6 +27,12 @@
         "iconPath": "@iconPathComponent",
         "selectedIconPath": "@selectedIconPathComponent",
         "text": "2048"
+      },
+      {
+        "pagePath": "pages/login/login",
+        "iconPath": "@iconPathAPI",
+        "selectedIconPath": "@selectedIconPathAPI",
+        "text": "登录"
       }
     ]
   },
